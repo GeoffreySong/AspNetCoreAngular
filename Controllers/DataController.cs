@@ -16,6 +16,12 @@ namespace AspNetCoreAngular.Controllers
 			return HEROES;
         }
 
+		[HttpGet("[action]/{id}")]
+		public Hero GetHero(int id)
+		{
+			return HEROES.FirstOrDefault(a => a.Id == id);
+		}
+
 		public static Hero[] HEROES = new Hero[] {
 			new Hero{ Id = 11, Name = "Mr. Nice" },
 			new Hero{ Id = 12, Name = "Narco" },
