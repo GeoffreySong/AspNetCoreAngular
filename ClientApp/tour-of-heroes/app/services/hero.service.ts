@@ -2,21 +2,19 @@
 import { Http } from '@angular/http';
 import 'rxjs/Rx';
 
-import { Hero } from '../../types/hero.type';
-
 @Injectable()
 export class HeroService {
 	constructor(private http: Http) {
 	}
 
-	getHeroes(): Promise<Hero[]> {
+	getHeroes(): Promise<any[]> {
 		return this.http.get('api/Data/GetHeroes')
-			.map(response => response.json() as Hero[])
+			.map(response => response.json())
 			.toPromise();
 	}
-	getHero(id: number): Promise<Hero> {
+	getHero(id: number): Promise<any> {
 		return this.http.get(`api/Data/GetHero/${id}`)
-			.map(response => response.json() as Hero)
+			.map(response => response.json())
 			.toPromise();
 	}
 }
