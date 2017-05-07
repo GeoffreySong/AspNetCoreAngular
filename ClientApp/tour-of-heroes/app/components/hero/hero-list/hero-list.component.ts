@@ -23,5 +23,19 @@ export class HeroListComponent implements OnInit {
 	gotoDetail(): void {
 		this.router.navigate(['/detail', this.selectedHero.id]);
 	}
+	add(name: string): void {
+		name = name.trim();
+		if (!name) return;
 
+		this.heroService.addHero(name).then(a => this.heroes.push(a));
+	}
+	delete(hero: any): void {
+		let id = hero.id;
+		if (id <= 0) return;
+
+		let index = this.heroes.indexOf(hero);
+		let temp = index;
+		this.heroService.deleteHero(id).then(() => this.heroes.splice(index, 1));
+
+	}
 }

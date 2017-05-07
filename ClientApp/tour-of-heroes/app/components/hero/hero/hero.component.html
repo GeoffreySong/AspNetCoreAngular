@@ -1,4 +1,8 @@
 <div class='container'>
 	<h2>My Heroes</h2>
+	<div>
+		<label>Hero name:</label> <input #heroName />
+		<button (click)="heroList.add(heroName.value); heroName.value=''">Add</button>
+	</div>
 	<hero-list #heroList></hero-list>
 </div>

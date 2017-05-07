@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroComponent } from './components/hero/hero/hero.component';
 import { HeroListComponent } from './components/hero/hero-list/hero-list.component';
 import { HeroDetailComponent } from './components/hero/hero-detail/hero-detail.component';
+import { HeroSearchComponent } from './components/hero/hero-search/hero-search.component';
 
 @NgModule({
     bootstrap: [ AppComponent ],
@@ -19,6 +20,7 @@ import { HeroDetailComponent } from './components/hero/hero-detail/hero-detail.c
 		HeroComponent,
 		HeroListComponent,
 		HeroDetailComponent,
+		HeroSearchComponent,
     ],
     imports: [
 		UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
